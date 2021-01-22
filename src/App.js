@@ -1,8 +1,8 @@
 import * as React from 'react'
+import Filter from './Filter'
 import Job from './Job'
 import data from './data.json'
 import './App.css'
-import { ReactComponent as IconRemove } from './assets/icon-remove.svg'
 
 function App() {
   const [filter, setFilter] = React.useState(new Set())
@@ -30,24 +30,11 @@ function App() {
       <header className="App-header"></header>
       <main className="Content">
         {isFilterActive ? (
-          <div className="Filter-card">
-            <ul className="Filter-container">
-              {[...filter].map((lang) => (
-                <li key={lang} className="Filter-item">
-                  <span className="-label">{lang}</span>
-                  <button
-                    className="-btn"
-                    onClick={() => removeLangFromFilter(lang)}
-                  >
-                    <IconRemove />
-                  </button>
-                </li>
-              ))}
-            </ul>
-            <button className="Filter-clear-btn" onClick={clearFilter}>
-              Clear
-            </button>
-          </div>
+          <Filter
+            filter={[...filter]}
+            onItemRemoveBtnClick={removeLangFromFilter}
+            onClearBtnClick={clearFilter}
+          />
         ) : null}
         <div className="List">
           {matches.map((d) => (

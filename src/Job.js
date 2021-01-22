@@ -1,6 +1,6 @@
 import './Job.css'
 
-function Job({ data }) {
+function Job({ data, onLangClick }) {
   return (
     <div className={`Job-card ${data.featured ? '--featured' : ''}`}>
       <img src={data.logo} className="Job-logo" alt="job logo" />
@@ -20,7 +20,11 @@ function Job({ data }) {
       <hr className="Job-divider" />
       <p className="Job-language-container">
         {data.languages.map((lang) => (
-          <span key={lang} className="Job-language-item">
+          <span
+            key={lang}
+            className="Job-language-item"
+            onClick={() => onLangClick(lang)}
+          >
             {lang}
           </span>
         ))}

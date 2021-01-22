@@ -16,6 +16,9 @@ function App() {
       return new Set([...prevFilter])
     })
   }
+  const clearFilter = () => {
+    setFilter(new Set())
+  }
 
   const isFilterActive = filter.size !== 0
   const matches = isFilterActive
@@ -41,7 +44,9 @@ function App() {
                 </li>
               ))}
             </ul>
-            <button className="Filter-clear-btn">Clear</button>
+            <button className="Filter-clear-btn" onClick={clearFilter}>
+              Clear
+            </button>
           </div>
         ) : null}
         <div className="List">

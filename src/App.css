@@ -9,3 +9,11 @@
   width: 100%;
   background-color: var(--color-primary);
 }
+
+.List {
+  padding: 60px 20px 40px;
+}
+
+.List > *:nth-child(n + 2) {
+  margin-top: 40px;
+}

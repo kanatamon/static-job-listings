@@ -4,10 +4,15 @@
   --color-filter-tablets: hsl(180, 31%, 95%);
   --color-dark-cyan: hsl(180, 8%, 52%);
   --color-very-dark-cyan: hsl(180, 14%, 20%);
+  --card-border-radius: 6px;
 }
 
 html {
   font-size: 15px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -25,5 +30,15 @@ code {
 }
 
 p {
+  margin: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }

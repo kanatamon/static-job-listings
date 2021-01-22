@@ -25,24 +25,30 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"></header>
-      <main className="List">
+      <main className="Content">
         {isFilterActive ? (
-          <div className="Filter">
+          <div className="Filter-card">
             <ul className="Filter-container">
               {[...filter].map((lang) => (
                 <li key={lang} className="Filter-item">
-                  <span>{lang}</span>
-                  <button onClick={() => removeLangFromFilter(lang)}>
+                  <span className="-label">{lang}</span>
+                  <button
+                    className="-btn"
+                    onClick={() => removeLangFromFilter(lang)}
+                  >
                     <IconRemove />
                   </button>
                 </li>
               ))}
             </ul>
+            <button className="Filter-clear-btn">Clear</button>
           </div>
         ) : null}
-        {matches.map((d) => (
-          <Job key={d.id} data={d} onLangClick={addLangToFilter} />
-        ))}
+        <div className="List">
+          {matches.map((d) => (
+            <Job key={d.id} data={d} onLangClick={addLangToFilter} />
+          ))}
+        </div>
       </main>
     </div>
   )

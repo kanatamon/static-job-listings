@@ -18,6 +18,11 @@
   margin-bottom: 20px;
   padding: 10px;
 }
+.Filter-clear-btn:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 .Filter-container {
   display: flex;
@@ -43,4 +48,8 @@
   border: 0;
   padding: 10px;
   background-color: var(--color-primary);
+  cursor: pointer;
+}
+.Filter-item .-btn:hover {
+  background-color: var(--color-very-dark-cyan);
 }

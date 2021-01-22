@@ -8,9 +8,9 @@
 .Job-card.--featured {
   border-left: var(--card-border-radius) solid var(--color-primary);
 }
-.Job-card > *:nth-child(n + 3) {
+/* .Job-card > *:nth-child(n + 3) {
   margin-top: 10px;
-}
+} */
 
 .Job-logo {
   position: absolute;
@@ -18,6 +18,10 @@
   left: 20px;
   width: 64px;
   height: 64px;
+}
+
+.Job-details-container > *:nth-child(n + 2) {
+  margin-top: 10px;
 }
 
 .Job-highlight-container {
@@ -54,6 +58,10 @@
 .Job-position {
   font-weight: 700;
   color: var(--color-very-dark-cyan);
+  cursor: pointer;
+}
+.Job-position:hover {
+  color: var(--color-primary);
 }
 
 .Job-context-container {
@@ -90,4 +98,38 @@
   color: var(--color-primary);
   font-weight: 700;
   font-size: 0.85rem;
+  cursor: pointer;
+}
+.Job-language-item:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+@media (min-width: 1280px) {
+  .Job-card {
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .Job-logo {
+    margin-right: 40px;
+    position: static;
+    width: 96px;
+    height: 96px;
+  }
+
+  .Job-divider {
+    display: none;
+  }
+
+  .Job-language-container {
+    margin-left: auto;
+  }
+  .Job-language-container > * {
+    margin: 0;
+  }
+  .Job-language-container > *:nth-child(n + 2) {
+    margin-left: 20px;
+  }
 }

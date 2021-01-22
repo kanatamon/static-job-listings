@@ -21,3 +21,23 @@
 .List > *:nth-child(n + 2) {
   margin-top: 60px;
 }
+
+@media (min-width: 1280px) {
+  .App-header {
+    background: url(./assets/bg-header-desktop.svg);
+    background-color: var(--color-primary);
+  }
+
+  .Filter-card + .List {
+    transform: translateY(-60px);
+  }
+
+  .Content {
+    max-width: 1280px;
+    margin: auto;
+  }
+
+  .List > *:nth-child(n + 2) {
+    margin-top: 20px;
+  }
+}
